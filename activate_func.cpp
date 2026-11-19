@@ -9,6 +9,7 @@ Matrix Activate_function(const Matrix& m, Activate_func func) {
       return Softmax_act(m);
   }
 
+  return m;
   // Добавить исключения
 }
 

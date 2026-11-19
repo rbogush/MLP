@@ -70,6 +70,20 @@
     return m3;
   }
 
+  Matrix Matrix::mat_mul_adamar(const Matrix& m2) const {
+    // Нужно добавить исключение
+    
+    Matrix m3(row_, col_);
+
+    for (size_t i = 0; i < row_; i++) {
+      for (size_t j = 0; j < col_; j++) {
+        (m3.data)[i][j] = data[i][j] * (m2.data)[i][j];
+      }
+    }
+
+    return m3;
+  }
+
   size_t Matrix::row() const {
     return row_;
   }

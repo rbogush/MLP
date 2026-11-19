@@ -26,6 +26,7 @@ public:
   Matrix mat_copy() const;
   Matrix mat_mul(const Matrix& m2) const;
   Matrix mat_sum(const Matrix& m2) const;
+  Matrix mat_mul_adamar(const Matrix& m2) const;
   size_t row() const;
   size_t col() const;
   double at(size_t r, size_t c) const;
