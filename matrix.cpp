@@ -84,6 +84,41 @@
     return m3;
   }
 
+  Matrix Matrix::mat_trans() const {
+    Matrix res(col_, row_);
+
+    for (size_t i = 0; i < row_; i++) {
+      for (size_t j = 0; j < col_; j++) {
+        (res.data)[j][i] = data[i][j];
+      }
+    }
+
+    return res;
+  }
+
+  void Matrix::mat_scale(int k) {
+    for (size_t i = 0; i < row_; i++) {
+      for (size_t j = 0; j < col_; j++) {
+        data[i][j] *= k;
+      }
+    }
+  }
+
+  Matrix Matrix::mat_sub(const Matrix& m) const {
+
+    // Добавить исключения крч
+
+    Matrix res(row_, col_);
+
+    for (size_t i = 0; i < row_; i++) {
+      for (size_t j = 0; j < col_; j++) {
+        (res.data)[i][j] = data[i][j] - (m.data)[i][j];
+      }
+    }
+
+    return res;
+  }
+
   size_t Matrix::row() const {
     return row_;
   }

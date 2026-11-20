@@ -1,16 +1,13 @@
 #include "matrix.hpp"
+#include "activate_func.hpp"
 
 int main() {
 
-  Matrix m1(3, 3);
-  Matrix m2(3, 3);
-  m1.mat_rand(-10, 10);
-  m2.mat_rand(-10, 10);
-  Matrix m3(3, 3);
-  m1.mat_print();
+  Matrix m1({{1, 2, 3, 4}});
+  m1.mat_print();  
   std::cout << "\nM2:\n";
-  m2.mat_print();
-  m3 = m1.mat_mul_adamar(m2);
-  m3.mat_print();  
+  Matrix m2(5,1);
+  m2 = Activate_function(m1, SOFTMAX);
+  m2.mat_print();  
   return 0;
 }

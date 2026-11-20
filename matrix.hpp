@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <random>
+#include <cmath>
 
 // Constants
 
@@ -27,6 +28,9 @@ public:
   Matrix mat_mul(const Matrix& m2) const;
   Matrix mat_sum(const Matrix& m2) const;
   Matrix mat_mul_adamar(const Matrix& m2) const;
+  Matrix mat_trans() const;
+  Matrix mat_sub(const Matrix& m) const;
+  void mat_scale(int k);
   size_t row() const;
   size_t col() const;
   double at(size_t r, size_t c) const;
