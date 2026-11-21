@@ -15,7 +15,7 @@
       col_ = m[0].size();
     }
   }
-
+  
   void Matrix::mat_rand(double minVal, double maxVal) {
     
    static std::mt19937 gen(std::random_device{}());
@@ -96,12 +96,17 @@
     return res;
   }
 
-  void Matrix::mat_scale(int k) {
+  Matrix Matrix::mat_scale(double k) {
+
+    Matrix res(row_, col_);
+
     for (size_t i = 0; i < row_; i++) {
       for (size_t j = 0; j < col_; j++) {
-        data[i][j] *= k;
+        (res.data)[i][j] = data[i][j] * k;
       }
     }
+
+    return res;
   }
 
   Matrix Matrix::mat_sub(const Matrix& m) const {

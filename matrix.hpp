@@ -20,7 +20,7 @@ private:
   std::vector<std::vector<double>> data;
 
 public:
-
+  Matrix::Matrix() = default;
   Matrix(size_t r, size_t c);
   Matrix(const std::vector<std::vector<double>>& m);
   void mat_rand(double minVal, double maxVal);
@@ -30,7 +30,7 @@ public:
   Matrix mat_mul_adamar(const Matrix& m2) const;
   Matrix mat_trans() const;
   Matrix mat_sub(const Matrix& m) const;
-  void mat_scale(int k);
+  Matrix mat_scale(double k);
   size_t row() const;
   size_t col() const;
   double at(size_t r, size_t c) const;

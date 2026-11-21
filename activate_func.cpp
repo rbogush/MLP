@@ -51,25 +51,25 @@ Matrix Softmax_act(const Matrix& m) {
 
   Matrix res(m.row(), m.col());
 
-  for (size_t i = 0; i < m.row(); i++) {
+  for (size_t i = 0; i < m.col(); i++) {
 
-    double max_element{m.at(i, 0)};
+    double max_element{m.at(0, i)};
 
-    for (size_t j = 1; j < m.col(); j++) {
-      if (m.at(i, j) > max_element) {
-        max_element = m.at(i, j);
+    for (size_t j = 1; j < m.row(); j++) {
+      if (m.at(j, i) > max_element) {
+        max_element = m.at(j, i);
       }
     }
 
     double sum{0};
-    for (size_t j = 0; j < m.col(); j++) {
-      res.at(i, j) = std::exp(m.at(i, j) - max_element);
-      sum += res.at(i, j);
+    for (size_t j = 0; j < m.row(); j++) {
+      res.at(j, i) = std::exp(m.at(j, i) - max_element);
+      sum += res.at(j, i);
       
     }
 
-    for (size_t j = 0; j < m.col(); j++) {
-      res.at(i, j) /= sum;
+    for (size_t j = 0; j < m.row(); j++) {
+      res.at(j, i) /= sum;
     }
   }
 
