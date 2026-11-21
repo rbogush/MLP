@@ -10,6 +10,7 @@
 
 const int print_setw_value = 8;
 const int print_digits_after_dot_count = 2;
+const double LEARNING_RATE = 0.01;
 
 // Matrix class
 
@@ -20,7 +21,7 @@ private:
   std::vector<std::vector<double>> data;
 
 public:
-  Matrix::Matrix() = default;
+  Matrix() = default;
   Matrix(size_t r, size_t c);
   Matrix(const std::vector<std::vector<double>>& m);
   void mat_rand(double minVal, double maxVal);

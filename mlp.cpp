@@ -28,7 +28,7 @@ Matrix MLP::forward(const Matrix& x) {
 
     //Шаг 3 - Назад
     Matrix grad = pred.mat_sub(target);
-    for (size_t i = layers_.size() - 1; i >= 0 ; i--) {
+    for (int i = layers_.size() - 1; i >= 0 ; i--) {
       grad = layers_[i].back_propogation(grad);
     }
 
@@ -45,7 +45,7 @@ Matrix MLP::forward(const Matrix& x) {
     Matrix pred = forward(x);
     size_t max = 0;
 
-    for (size_t i = 1; i < x.row(); i++) {
+    for (size_t i = 1; i < pred.row(); i++) {
       if (pred.at(i, 0) > pred.at(max, 0)) {
         max = i;
       }

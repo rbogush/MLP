@@ -6,7 +6,7 @@ Matrix Layer::forward_pass(const Matrix& m) {
 
     inputs_ = m;
 
-    Matrix res = m.mat_mul(weights_);
+    Matrix res = weights_.mat_mul(m);
     res = res.mat_sum(biases_);
 
     z_before_act_ = res;
@@ -30,8 +30,7 @@ Matrix Layer::back_propogation(const Matrix& grad) {
   }
 
 void Layer::update(double learning_rate) {
-  dW_.mat_scale(learning_rate);
-  weights_ = weights_.mat_sub(dW_);
-  db_.mat_scale(learning_rate);
-  biases_ = biases_.mat_sub(db_);
+  
+  weights_ = weights_.mat_sub(dW_.mat_scale(learning_rate));
+  biases_ = biases_.mat_sub(db_.mat_scale(learning_rate));
 }
