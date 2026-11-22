@@ -12,7 +12,7 @@
 class DrawArea : public QWidget {
 public:
   static constexpr int kSize = 280;     // размер поля в пикселях
-  static constexpr int kPenWidth = 22;  // толщина кисти
+  static constexpr int kPenWidth = 15;  // толщина кисти
 
   explicit DrawArea(QWidget* parent = nullptr)
       : QWidget(parent), image_(kSize, kSize, QImage::Format_RGB32) {

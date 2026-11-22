@@ -1,13 +1,11 @@
 # ninja log v7
-70	1745	8170451187694376	CMakeFiles/gui.dir/activate_func.cpp.obj	dcb209bc3bdec0c8
-100	1783	8170451188012718	CMakeFiles/gui.dir/file.cpp.obj	6e210c5f441bdbb8
-90	1907	8170451187908846	CMakeFiles/gui.dir/mlp.cpp.obj	92efda07c96dea94
-80	1976	8170451187809141	CMakeFiles/gui.dir/layer.cpp.obj	8fbfb823bc83434b
-58	2145	8170451187587588	CMakeFiles/gui.dir/matrix.cpp.obj	74ea21c412cd5fb3
-38	2336	8170451187375529	CMakeFiles/gui.dir/gui_main.cpp.obj	f95168cc7a97be62
-49	3376	8170451187483931	CMakeFiles/gui.dir/preprocess.cpp.obj	6e2748fd00f8afb6
 30	1260	8170452857175531	CMakeFiles/gui.dir/activate_func.cpp.obj	dcb209bc3bdec0c8
+100	1783	8170451188012718	CMakeFiles/gui.dir/file.cpp.obj	6e210c5f441bdbb8
 50	1419	8170452857368643	CMakeFiles/gui.dir/mlp.cpp.obj	92efda07c96dea94
 40	1460	8170452857278227	CMakeFiles/gui.dir/layer.cpp.obj	8fbfb823bc83434b
+58	2145	8170451187587588	CMakeFiles/gui.dir/matrix.cpp.obj	74ea21c412cd5fb3
 19	3892	8170452857022024	CMakeFiles/gui.dir/gui_main.cpp.obj	f95168cc7a97be62
+49	3376	8170451187483931	CMakeFiles/gui.dir/preprocess.cpp.obj	6e2748fd00f8afb6
 3893	4083	8170452895790339	gui.exe	b32ed58fbab3b710
+146	4627	8170536522618003	CMakeFiles/gui.dir/gui_main.cpp.obj	f95168cc7a97be62
+4628	5000	8170536567418404	gui.exe	b32ed58fbab3b710
