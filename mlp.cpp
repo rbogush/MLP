@@ -3,7 +3,7 @@
 #include "activate_func.hpp"
 #include "mlp.hpp"
 
-Matrix MLP::forward(const Matrix& x) {
+  Matrix MLP::forward(const Matrix& x) {
     Matrix a = x;
 
     for (size_t i = 0; i < layers_.size(); i++) {
@@ -53,3 +53,30 @@ Matrix MLP::forward(const Matrix& x) {
 
     return max;
   }
+
+  int MLP::w_layers() const {
+    return write_wb_to_file(layers_[0].get_w(), layers_[0].get_b(), layers_[1].get_w(), layers_[1].get_b());
+  }
+
+  int MLP::r_layers() {
+
+    Matrix w1 = layers_[0].get_w();
+    Matrix b1 = layers_[0].get_b();
+    Matrix w2 = layers_[1].get_w();
+    Matrix b2 = layers_[1].get_b();
+
+    int code = read_wb_from_file(w1, b1, w2, b2);
+
+    if (code != 0) {
+      return code;
+    }
+
+    layers_[0].set_w(w1);
+    layers_[0].set_b(b1);
+    layers_[1].set_w(w2);
+    layers_[1].set_b(b2);
+
+    return code;
+  }
+
+

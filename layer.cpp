@@ -34,3 +34,19 @@ void Layer::update(double learning_rate) {
   weights_ = weights_.mat_sub(dW_.mat_scale(learning_rate));
   biases_ = biases_.mat_sub(db_.mat_scale(learning_rate));
 }
+
+Matrix Layer::get_w() const {
+    return weights_;
+}
+
+Matrix Layer::get_b() const {
+    return biases_;
+}
+
+void Layer::set_w(const Matrix& m) {
+    weights_ = m;
+}
+
+void Layer::set_b(const Matrix& m) {
+    biases_ = m;
+}

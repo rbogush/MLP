@@ -48,10 +48,6 @@ int main() {
     std::cout << "first label: " << train_y[0] << std::endl;
     print_digit(train_x[0]);   // тут должна быть видна пятёрка
 
-    // для первых запусков, чтобы было быстро:
-    train_x.resize(10000);
-    train_y.resize(10000);
-
     // сеть 784 -> 128 (ReLU) -> 10 (Softmax)
     double limit1 = std::sqrt(6.0 / (784 + 128));
     Matrix w1(128, 784);
@@ -89,6 +85,7 @@ int main() {
                 << std::endl;
     }
 
+
     // проверка на настоящей двойке из тестового набора
     for (size_t k = 0; k < test_x.size(); k++) {
       if (test_y[k] == 2) {
@@ -97,9 +94,15 @@ int main() {
         break;
       }
     }
+
+    if (net.w_layers() != 0) {
+      return 1;
+    }
   } catch (const std::exception& e) {
     std::cout << "ERROR: " << e.what() << std::endl;
     return 1;
   }
+
+  
   return 0;
 }

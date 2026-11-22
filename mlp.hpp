@@ -1,5 +1,7 @@
 #pragma once
 
+#include "file.hpp"
+
 class MLP
 {
 private:
@@ -11,5 +13,7 @@ public:
   Matrix forward(const Matrix& x);
   double train_step(const Matrix& x, const Matrix& target, double learning_rate);
   size_t predict(const Matrix& x);
+  int w_layers() const;
+  int r_layers();
 };
 
