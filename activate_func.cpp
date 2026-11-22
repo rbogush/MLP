@@ -1,4 +1,3 @@
-#include "matrix.hpp"
 #include "activate_func.hpp"
 
 Matrix Activate_function(const Matrix& m, Activate_func func) {

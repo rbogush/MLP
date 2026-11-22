@@ -1,5 +1,7 @@
 #pragma once
 
+#include "matrix.hpp"
+
 enum Activate_func {
   RELU,
   SOFTMAX
